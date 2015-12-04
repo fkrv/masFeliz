@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var boton: UIButton!
+    @IBOutlet weak var mensaje: UILabel!
+    let color = Colores()
+    let frase = Frase()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func cambiarMensaje(sender: AnyObject) {
+        mensaje.text = frase.regresaFraseAleatoria()
+        view.backgroundColor = color.regresaColorAleatorio()
+    }
 
 }
 
